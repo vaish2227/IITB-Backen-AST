@@ -30,7 +30,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: my-artifact
-          path: artifact.jar
+          path:  /home/runner/work/IITB-Backen-AST/IITB-Backen-AST/target/IITB-0.0.1-SNAPSHOT.jar
 
   deploy:
     runs-on: ubuntu-latest
