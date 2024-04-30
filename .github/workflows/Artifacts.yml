@@ -25,25 +25,28 @@ jobs:
       - name: Build JAR
         run: mvn package -DskipTests
 
+      - name: Move JAR to Different Folder
+        run: mv /home/runner/work/IITB-Backen-AST/IITB-Backen-AST/target/IITB-0.0.1-SNAPSHOT.jar /src/main
+
       # Upload artifact
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: my-artifact
-          path:  /home/runner/work/IITB-Backen-AST/IITB-Backen-AST/target/IITB-0.0.1-SNAPSHOT.jar
+      # - name: Upload artifact
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: my-artifact
+      #     path:  /home/runner/work/IITB-Backen-AST/IITB-Backen-AST/target/IITB-0.0.1-SNAPSHOT.jar
 
-  deploy:
-    runs-on: ubuntu-latest
+  # deploy:
+  #   runs-on: ubuntu-latest
 
-    needs: build
+  #   needs: build
 
-    steps:
-      # Download artifact
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: my-artifact
-          path: deployArtifact
+  #   steps:
+  #     # Download artifact
+  #     - name: Download artifact
+  #       uses: actions/download-artifact@v2
+  #       with:
+  #         name: my-artifact
+  #         path: deployArtifact
 
       # Deploy your artifact
       # Add your deployment steps here
